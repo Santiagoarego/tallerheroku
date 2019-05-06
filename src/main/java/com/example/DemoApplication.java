@@ -12,7 +12,7 @@ public class DemoApplication {
   @RequestMapping("/")
   @ResponseBody
   String home() {
-    return "Hello! This is sa demo application linked to this tutorial: http://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html";
+    return "Hello! This is sa su puta demo application linked to this tutorial: http://jkutner.github.io/2016/08/18/android-backend-api-heroku-retrofit.html";
   }
 
   @RequestMapping("/hello")
