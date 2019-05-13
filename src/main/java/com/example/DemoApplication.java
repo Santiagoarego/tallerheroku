@@ -18,7 +18,7 @@ public class DemoApplication {
   @RequestMapping("/hello")
   @ResponseBody
   String hello() {
-    return "Hello from Heroku!";
+    return "Este dia es una chimba!";
   }
 
   public static void main(String[] args) {
