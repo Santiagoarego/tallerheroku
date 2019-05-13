@@ -23,8 +23,13 @@ public class DemoApplication {
 
   @RequestMapping("/crearUsuario")
   @ResponseBody
-  void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad) {
-    return "Hola mundo!";
+  void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion) {
+    if (
+     = new Estudiante)();
+
+    ) {
+
+    }
   }
 
 
