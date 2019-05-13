@@ -20,7 +20,13 @@ public class DemoApplication {
   String hello() {
     return "Hola mundo!";
   }
-  
+
+  @RequestMapping("/crearUsuario")
+  @ResponseBody
+  void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad) {
+    return "Hola mundo!";
+  }
+
 
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
