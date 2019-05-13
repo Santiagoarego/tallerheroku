@@ -18,13 +18,9 @@ public class DemoApplication {
   @RequestMapping("/hello")
   @ResponseBody
   String hello() {
-    return "Este dia es una chimba!";
+    return "Hola mundo!";
   }
-  @RequestMapping("/yeisson")
-  @ResponseBody
-  String yeisson(String prueba){
-    return "Yeisson es gay "+prueba;
-  }
+  
 
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
