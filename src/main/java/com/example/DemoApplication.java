@@ -22,8 +22,8 @@ public class DemoApplication {
   }
   @RequestMapping("/yeisson")
   @ResponseBody
-  String yeisson(){
-    return "Yeisson es gay";
+  String yeisson(String prueba){
+    return "Yeisson es gay "+prueba;
   }
 
   public static void main(String[] args) {
