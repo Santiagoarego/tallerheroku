@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(
-        name = "MyServlet",
-        urlPatterns = {"/arreglos"}
-    )
 public class Arreglos {
 
     private static Arreglos instancia = null;
