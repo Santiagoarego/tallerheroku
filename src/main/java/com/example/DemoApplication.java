@@ -20,6 +20,11 @@ public class DemoApplication {
   String hello() {
     return "Este dia es una chimba!";
   }
+  @RequestMapping("/yeisson")
+  @ResponseBody
+  String yeisson(){
+    return "Yeisson es gay";
+  }
 
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
