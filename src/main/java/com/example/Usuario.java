@@ -17,7 +17,7 @@ public class Usuario {
         this.correo = "";
         this.contraseña = "";
         this.nombre = "";
-        this.id = -2;
+        this.id = null;
     }
 
     public String getCorreo() {
@@ -45,11 +45,11 @@ public class Usuario {
         return this.nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
