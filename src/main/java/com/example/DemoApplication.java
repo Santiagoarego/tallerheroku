@@ -29,6 +29,7 @@ public class DemoApplication {
     if(seleccion.equals("0"))
     {
       Estudiante estd = new Estudiante(nombre, correo, contraseña, id, facultad);
+      Usuario user = estd; 
     }
   }
 
