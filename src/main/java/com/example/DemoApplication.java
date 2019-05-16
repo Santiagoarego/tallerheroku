@@ -29,7 +29,7 @@ public class DemoApplication {
 
   @RequestMapping("/crearUsuario")
   @ResponseBody
-  void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
+  String crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
   {
     boolean existecorreo = false;
     boolean existeid = false;
@@ -82,6 +82,7 @@ public class DemoApplication {
     {
       //acá se debe lanzar un error donde se especifique que no se puede guardar el usuario, debido a que ese correo y/o esa contraseña ya está registrada
     }
+    return "Se guardo";
   }
 
 
