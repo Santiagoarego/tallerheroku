@@ -39,7 +39,7 @@ public class DemoApplication {
     {
       if(usuario instanceof Estudiante)
       {
-        Estudiante estud = usuario;
+        Estudiante estud = (Estudiante) usuario;
         if(estud.getId.equals(id))
         {
           existeid = true;
@@ -51,7 +51,7 @@ public class DemoApplication {
       }
       else if(usuario instanceof Bibliotecario)
       {
-        Bibliotecario bibliot = usuario;
+        Bibliotecario bibliot = (Bibliotecario) usuario;
         if(bibliot.getId.equals(id))
         {
           existeid = true;
