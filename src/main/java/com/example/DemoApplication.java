@@ -25,12 +25,19 @@ public class DemoApplication {
   @ResponseBody
   void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
   {
+
+    Arreglos single = Arreglos.constructora();
     //0 = estudiante
     if(seleccion.equals("0"))
     {
       Estudiante estd = new Estudiante(nombre, correo, contraseña, id, facultad);
       Usuario user = estd;
-      Arreglos single = Arreglos.constructora();
+      single.addUsuario(user);
+    }
+    else
+    {
+      Bibliotecario bibl = new Bibliotecario(nombre, correo, contraseña, id, facultad);
+      Usuario user = bibl;
       single.addUsuario(user);
     }
   }
