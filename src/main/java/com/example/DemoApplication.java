@@ -37,13 +37,29 @@ public class DemoApplication {
     ArrayList<Usuario> users = single.getUsuarios();
     for(Usuario usuario : users)
     {
-      if(usuario.getId.equals(id))
+      if(usuario instanceof Estudiante)
       {
-        existeid = true;
+        Estudiante estud = usuario;
+        if(estud.getId.equals(id))
+        {
+          existeid = true;
+        }
+        if(estud.getCorreo.equals(correo))
+        {
+          existecorreo = true;
+        }
       }
-      if(usuario.getCorreo.equals(correo))
+      else if(usuario instanceof Bibliotecario)
       {
-        existecorreo = true;
+        Bibliotecario bibliot = usuario;
+        if(bibliot.getId.equals(id))
+        {
+          existeid = true;
+        }
+        if(bibliot.getCorreo.equals(correo))
+        {
+          existecorreo = true;
+        }
       }
     }
     //0 = estudiante
