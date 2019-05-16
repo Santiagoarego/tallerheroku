@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.*;
-import Estudiante;
-import Usuario;
 
 @Controller
 @SpringBootApplication
@@ -31,7 +29,6 @@ public class DemoApplication {
     if(seleccion.equals("0"))
     {
       Estudiante estudiante = new Estudiante(nombre, correo, contraseña, id, facultad);
-      Usuario user = estudiante;
     }
   }
 
