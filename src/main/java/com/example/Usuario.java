@@ -2,7 +2,7 @@ package com.example;
 
 public class Usuario {
     private String nombre;
-    private int id;
+    private String id;
     private String correo;
     private String contraseña;
 
