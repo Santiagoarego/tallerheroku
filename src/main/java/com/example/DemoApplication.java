@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.ArrayList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
@@ -28,23 +29,60 @@ public class DemoApplication {
 
   @RequestMapping("/crearUsuario")
   @ResponseBody
-  void crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
+  String crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
   {
-
+    boolean existecorreo = false;
+    boolean existeid = false;
     Arreglos single = Arreglos.constructora();
-    //0 = estudiante
-    if(seleccion.equals("0"))
+    ArrayList<Usuario> users = single.getUsuarios();
+    for(Usuario usuario : users)
     {
-      Estudiante estd = new Estudiante(nombre, correo, contraseña, id, facultad);
-      Usuario user = estd;
-      single.addUsuario(user);
+      if(usuario instanceof Estudiante)
+      {
+        Estudiante estud = (Estudiante) usuario;
+        if(estud.getId.equals(id))
+        {
+          existeid = true;
+        }
+        if(estud.getCorreo.equals(correo))
+        {
+          existecorreo = true;
+        }
+      }
+      else if(usuario instanceof Bibliotecario)
+      {
+        Bibliotecario bibliot = (Bibliotecario) usuario;
+        if(bibliot.getId.equals(id))
+        {
+          existeid = true;
+        }
+        if(bibliot.getCorreo.equals(correo))
+        {
+          existecorreo = true;
+        }
+      }
+    }
+    //0 = estudiante
+    if(existecorreo == false && existeid == false)
+    {
+      if(seleccion.equals("0"))
+      {
+        Estudiante estd = new Estudiante(nombre, correo, contraseña, id, facultad);
+        Usuario user = estd;
+        single.addUsuario(user);
+      }
+      else
+      {
+        Bibliotecario bibl = new Bibliotecario(nombre, correo, contraseña, id, facultad);
+        Usuario user = bibl;
+        single.addUsuario(user);
+      }
     }
     else
     {
-      Bibliotecario bibl = new Bibliotecario(nombre, correo, contraseña, id, facultad);
-      Usuario user = bibl;
-      single.addUsuario(user);
+      //acá se debe lanzar un error donde se especifique que no se puede guardar el usuario, debido a que ese correo y/o esa contraseña ya está registrada
     }
+    return "Se guardo";
   }
 
 
