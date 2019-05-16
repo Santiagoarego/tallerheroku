@@ -1,4 +1,4 @@
-package servlet;
+package com.example;
 
 public class Prestamo
 {

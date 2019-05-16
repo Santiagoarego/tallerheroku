@@ -1,4 +1,4 @@
-package servlet;
+package com.example;
 
 import java.io.IOException;
 import java.util.ArrayList;

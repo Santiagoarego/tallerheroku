@@ -1,4 +1,4 @@
-package servlet;
+package com.example;
 
 public class Usuario {
     private String nombre;
