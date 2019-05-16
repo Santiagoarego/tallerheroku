@@ -26,4 +26,16 @@ public class Estudiante extends Usuario
   {
     this.facultad=name;
   }
+  public String getNombre() {
+    return this.nombre;
+}
+
+public String getId() {
+    return this.id;
+}
+public String getCorreo() {
+  return this.correo;
+}
+
+  
 }
