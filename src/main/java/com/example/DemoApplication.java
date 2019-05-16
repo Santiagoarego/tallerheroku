@@ -20,6 +20,11 @@ public class DemoApplication {
   String hello() {
     return "Hola mundo!";
   }
+  @RequestMapping("/pruebaDeDatos")
+  @ResponseBody
+  String pruebaDeDatos(String nombre){
+    return "prueba de datos "+nombre;
+  }
 
   @RequestMapping("/crearUsuario")
   @ResponseBody
