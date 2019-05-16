@@ -34,4 +34,9 @@ public class Arreglos {
     public ArrayList<Usuario> getUsuarios() {
         return this.usuarios;
     }
+
+    public void addUsuario(Usuario usuario)
+	{
+		this.usuarios.add(usuario);
+	}
 }
