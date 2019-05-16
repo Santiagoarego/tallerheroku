@@ -6,7 +6,7 @@ public class Usuario {
     private String correo;
     private String contraseña;
 
-    public Usuario(String nombre, String correo, String contraseña, int id) {
+    public Usuario(String nombre, String correo, String contraseña, String id) {
         this.correo = correo;
         this.contraseña = contraseña;
         this.nombre = nombre;
