@@ -56,7 +56,7 @@ public class DemoApplication {
         {
           existeid = true;
         }
-        if(bibliot.getCorreo.equals(correo))
+        if(bibliot.getCorreo().equals(correo))
         {
           existecorreo = true;
         }
