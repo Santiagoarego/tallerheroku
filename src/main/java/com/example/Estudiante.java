@@ -16,7 +16,19 @@ public class Estudiante extends Usuario
     this.facultad="";
   }
 
+  @Override
+  public String getNombre(){
+    return nombre;
 
+  }
+  @Override
+  public String getCorreo(){
+    return correo;
+  }
+  @Override
+  public String getId(){
+    return id;
+  }
   public String getFacultad()
   {
     return this.facultad;
