@@ -1,10 +1,10 @@
 package com.example;
 
 public class Usuario {
-    private String nombre;
-    private String id;
-    private String correo;
-    private String contraseña;
+    public String nombre;
+    public String id;
+    public String correo;
+    public String contraseña;
 
     public Usuario(String nombre, String correo, String contraseña, String id) {
         this.correo = correo;

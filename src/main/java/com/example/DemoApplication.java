@@ -40,11 +40,11 @@ public class DemoApplication {
       if(usuario instanceof Estudiante)
       {
         Estudiante estud = (Estudiante) usuario;
-        if(estud.getId.equals(id))
+        if(estud.getId().equals(id))
         {
           existeid = true;
         }
-        if(estud.getCorreo.equals(correo))
+        if(estud.getCorreo().equals(correo))
         {
           existecorreo = true;
         }
@@ -52,7 +52,7 @@ public class DemoApplication {
       else if(usuario instanceof Bibliotecario)
       {
         Bibliotecario bibliot = (Bibliotecario) usuario;
-        if(bibliot.getId.equals(id))
+        if(bibliot.getId().equals(id))
         {
           existeid = true;
         }
