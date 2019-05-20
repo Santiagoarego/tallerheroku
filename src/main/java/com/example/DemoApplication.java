@@ -69,11 +69,11 @@ public class DemoApplication {
     {
       for(Usuario usuario : users)
       {
-        if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
+        if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) )
         {
             return "0";//Para estudiante
         }
-        else if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
+        else if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) )
         {
           return "1";//Para Bibliotecario
         }
