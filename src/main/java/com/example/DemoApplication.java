@@ -19,7 +19,12 @@ public class DemoApplication {
   @RequestMapping("/hello")
   @ResponseBody
   String hello() {
-    return "Hola mundo!";
+    String usuarios="";
+    Arreglos sing = Arreglos.constructora();
+    for(Usuario us : sing.getUsuarios()){
+      usuarios+=us.getNombre()+" ";
+    }
+    return usuarios;
   }
   @RequestMapping("/pruebaDeDatos")
   @ResponseBody
