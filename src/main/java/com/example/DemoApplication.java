@@ -77,11 +77,10 @@ public class DemoApplication {
         {
           return "1";//Para Bibliotecario
         }
-        else
-        {
-          return "2";//Para error
-        }
+        
       }
+    }else{
+     return "2"; 
     }
     
   }
