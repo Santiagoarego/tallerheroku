@@ -71,15 +71,15 @@ public class DemoApplication {
       {
         if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
         {
-            answer = "0"//Para estudiante
+            answer = "0";//Para estudiante
         }
         else if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
         {
-          answer="1"//Para Bibliotecario
+          answer="1";//Para Bibliotecario
         }
         else
         {
-          answer="2"//Para error
+          answer="2";//Para error
         }
       }
     }
