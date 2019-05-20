@@ -80,7 +80,7 @@ public class DemoApplication {
     }
     else
     {
-      //acá se debe lanzar un error donde se especifique que no se puede guardar el usuario, debido a que ese correo y/o esa contraseña ya está registrada
+      return "Ya esta usado";
     }
     return "Se guardo";
   }
