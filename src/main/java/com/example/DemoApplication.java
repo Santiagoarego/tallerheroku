@@ -71,18 +71,16 @@ public class DemoApplication {
       {
         if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
         {
-            respuesta= "0";//Para estudiante
+            return "0";//Para estudiante
         }
         else if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
         {
-          respuesta= "1";//Para Bibliotecario
+          return "1";//Para Bibliotecario
         }
         
       }
-    }else{
-     respuesta= "2"; 
-    }
-    return respuesta;
+    }return "2";
+    
   }
 
   @RequestMapping("/verificacionexistencia")
