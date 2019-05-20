@@ -31,37 +31,10 @@ public class DemoApplication {
   @ResponseBody
   String crearUsuario(String nombre, String correo,String contraseña,String id,String facultad,String seleccion)
   {
-    boolean existecorreo = false;
-    boolean existeid = false;
+    boolean existecorreo = this.existecorreo(correo);
+    boolean existeid = this.existeid(contraseña);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
-    for(Usuario usuario : users)
-    {
-      if(usuario instanceof Estudiante)
-      {
-        Estudiante estud = (Estudiante) usuario;
-        if(estud.getId().equals(id))
-        {
-          existeid = true;
-        }
-        if(estud.getCorreo().equals(correo))
-        {
-          existecorreo = true;
-        }
-      }
-      else if(usuario instanceof Bibliotecario)
-      {
-        Bibliotecario bibliot = (Bibliotecario) usuario;
-        if(bibliot.getId().equals(id))
-        {
-          existeid = true;
-        }
-        if(bibliot.getCorreo().equals(correo))
-        {
-          existecorreo = true;
-        }
-      }
-    }
     //0 = estudiante
     if(existecorreo == false && existeid == false)
     {
@@ -83,6 +56,78 @@ public class DemoApplication {
       //acá se debe lanzar un error donde se especifique que no se puede guardar el usuario, debido a que ese correo y/o esa contraseña ya está registrada
     }
     return "Se guardo";
+  }
+
+  @RequestMapping("/ingresaUsuario")
+  @ResponseBody
+  String ingresaUsuario(String correo, String contraseña){
+    boolean existecorreo = false;
+    boolean existeid = false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Usuario> users = single.getUsuarios();
+    for(Usuario usuario : users)
+    {
+    }
+  }
+
+  @RequestMapping("/verificacionexistencia")
+  @ResponseBody
+  boolean existeid(String id){
+    boolean existeid=false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Usuario> users = single.getUsuarios();
+    for(Usuario usuario : users)
+    {
+
+      if(usuario instanceof Estudiante)
+      {
+        Estudiante estud = (Estudiante) usuario;
+        if(estud.getId().equals(id))
+        {
+          existeid = true;
+        }
+      }
+      else if(usuario instanceof Bibliotecario)
+      {
+        Bibliotecario bibliot = (Bibliotecario) usuario;
+        if(bibliot.getId().equals(id))
+        {
+          existeid = true;
+        }
+      }
+    }
+
+    return existeid;
+  }
+
+  @RequestMapping("/verificacionexistenciacorreo")
+  @ResponseBody
+  boolean existecorreo(String correo){
+    boolean existecorreo=false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Usuario> users = single.getUsuarios();
+    for(Usuario usuario : users)
+    {
+
+      if(usuario instanceof Estudiante)
+      {
+        Estudiante estud = (Estudiante) usuario;
+        if(estud.getCorreo().equals(correo))
+        {
+          existecorreo = true;
+        }
+      }
+      else if(usuario instanceof Bibliotecario)
+      {
+        Bibliotecario bibliot = (Bibliotecario) usuario;
+        if(bibliot.getCorreo().equals(correo))
+        {
+          existecorreo= true;
+        }
+      }
+    }
+
+    return existecorreo;
   }
 
 

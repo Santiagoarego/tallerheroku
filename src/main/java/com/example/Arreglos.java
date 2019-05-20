@@ -13,6 +13,7 @@ public class Arreglos {
 
     private static Arreglos instancia = null;
     private ArrayList<Usuario> usuarios = new ArrayList();
+    public String IdSession; 
     public static Arreglos constructora() {
 
         if (instancia == null) {
