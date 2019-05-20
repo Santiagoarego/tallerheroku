@@ -61,14 +61,29 @@ public class DemoApplication {
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
-    boolean existecorreo = false;
-    boolean existeid = false;
+    String answer=null;
+    boolean existecorreo = this.existecorreo();
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
-    for(Usuario usuario : users)
+    if(existecorreo==true)
     {
+      for(Usuario usuario : users)
+      {
+        if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
+        {
+            answer = "0"//Para estudiante
+        }
+        else if(usuario.getCorreo().equals(correo) && usuario.getContraseña().equals(contraseña) && usuario instanceof Estudiante)
+        {
+          answer="1"//Para Bibliotecario
+        }
+        else
+        {
+          answer="2"//Para error
+        }
+      }
     }
-    return "hola";
+    return answer;
   }
 
   @RequestMapping("/verificacionexistencia")
