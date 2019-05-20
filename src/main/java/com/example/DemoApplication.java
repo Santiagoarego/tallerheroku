@@ -62,7 +62,7 @@ public class DemoApplication {
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
     String answer=null;
-    boolean existecorreo = this.existecorreo();
+    boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo==true)
