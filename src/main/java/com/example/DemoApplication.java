@@ -66,7 +66,7 @@ public class DemoApplication {
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
-    String respuesta = 2;
+    String respuesta = "2";
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
@@ -78,11 +78,11 @@ public class DemoApplication {
         {
           if(usuario instanceof Estudiante)
           {
-            respuesta=1;
+            respuesta="1";
           }
           else if(usuario instanceof Bibliotecario)
           {
-            respuesta=0;
+            respuesta="0";
           }
         }
       }
