@@ -86,7 +86,7 @@ public class DemoApplication {
             respuesta="Ingreso el bibliotecario "+usuario.getNombre();
           }
         }else
-        respuesta="Credenciales incorrectas"
+        respuesta="Credenciales incorrectas";
       }
     }else
     respuesta="User doesn't exist";
