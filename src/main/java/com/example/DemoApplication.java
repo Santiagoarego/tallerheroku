@@ -22,11 +22,13 @@ public class DemoApplication {
     String usuarios="";
     Arreglos sing = Arreglos.constructora();
     for(Usuario us : sing.getUsuarios()){
-      if(us instanceof Estudiante)
+      if(us instanceof Estudiante){
       usuarios+=us.getCorreo()+" "+us.getContrasena()+" "+sing.getUsuarios().size()+" Estudiante";
-    }else if(us instanceof Bibliotecario){
+      }
+    else if(us instanceof Bibliotecario){
       usuarios+=us.getCorreo()+" "+us.getContrasena()+" "+sing.getUsuarios().size()+" Bibliotecario";
     }
+  }
     return usuarios;
   }
   @RequestMapping("/pruebaDeDatos")
