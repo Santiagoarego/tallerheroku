@@ -98,7 +98,8 @@ public class DemoApplication {
 }
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
-  boolean existeid(String id){
+  boolean existeid(String id)
+  {
     boolean existeid=false;
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
