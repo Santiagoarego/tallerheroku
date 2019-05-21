@@ -79,15 +79,17 @@ public class DemoApplication {
         {
           if(usuario instanceof Estudiante)
           {
-            respuesta="1";
+            respuesta="Ingreso el usuario "+usuario.getNombre();
           }
           else if(usuario instanceof Bibliotecario)
           {
-            respuesta="0";
+            respuesta="Ingreso el bibliotecario "+usuario.getNombre();
           }
-        }
+        }else
+        respuesta="Credenciales incorrectas"
       }
-    }
+    }else
+    respuesta="User doesn't exist";
     return respuesta;
 
 }
