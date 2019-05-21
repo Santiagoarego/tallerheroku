@@ -76,9 +76,12 @@ public class DemoApplication {
       {
         if (usuario instanceof Estudiante){
           Estudiante estud = (Estudiante) usuario;
-          if(estud.getCorreo().equals(correo) /*&& estud.getContraseña().equals(contraseña) */)
+          if(estud.getCorreo().equals(correo))
             {
-                respuesta= "0";//Para estudiante
+              if(estud.getContraseña().equals(contraseña))
+              {
+                  respuesta= "0";//Para estudiante
+              }
             }
         }else if(usuario instanceof Bibliotecario){
           Bibliotecario bib = (Bibliotecario) usuario;
