@@ -16,27 +16,9 @@ public class Estudiante extends Usuario
     this.facultad="";
   }
 
-  @Override
-  public String getNombre(){
-    return nombre;
-
-  }
-  @Override
-  public String getCorreo(){
-    return correo;
-  }
-  @Override
-  public String getId(){
-    return id;
-  }
   public String getFacultad()
   {
     return this.facultad;
-  }
-
-  public String getContraseña()
-  {
-    return this.contraseña;
   }
 
   public void setFacultad(String name)

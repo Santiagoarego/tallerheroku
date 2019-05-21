@@ -66,7 +66,7 @@ public class DemoApplication {
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
-    String respuesta = "";
+    String respuesta = new String();
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
@@ -83,7 +83,7 @@ public class DemoApplication {
             }
         }else if(usuario instanceof Bibliotecario){
           Bibliotecario bib = (Bibliotecario) usuario;
-           if(bib.getCorreo().equals(correo) )
+           if(bib.getCorreo().equals(correo) && bib.getContraseña().equals(contraseña))
               {
                 respuesta= "1";//Para Bibliotecario
               }
@@ -129,8 +129,6 @@ public class DemoApplication {
     return existeid;
   }
 
-  @RequestMapping("/verificacionexistenciacorreo")
-  @ResponseBody
   boolean existecorreo(String correo){
     boolean existecorreo=false;
     Arreglos single = Arreglos.constructora();
