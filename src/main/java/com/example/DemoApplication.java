@@ -26,10 +26,10 @@ public class DemoApplication {
       usuarios+=us.getCorreo()+" "+us.getContrasena()+" "+sing.getUsuarios().size()+" Estudiante";
       }
     else if(us instanceof Bibliotecario){
-      usuarios+=us.getCorreo()+" "+us.getContrasena()+" "+sing.getUsuarios().size()+" Bibliotecario";
+      usuarios+=us.getCorreo()+" "+us.getContrasena()+" Bibliotecario || ";
     }
   }
-    return usuarios;
+    return usuarios+sing.getUsuarios().size();
   }
   @RequestMapping("/pruebaDeDatos")
   @ResponseBody
