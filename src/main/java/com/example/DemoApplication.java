@@ -87,7 +87,7 @@ public class DemoApplication {
               respuesta="Ingreso el usuario "+usuario.getNombre();
             }else
               respuesta = "Credenciales incorectas";
-          }else if(usuario instanceof Bibliotecario){
+          } if(usuario instanceof Bibliotecario){
             Bibliotecario stud = (Bibliotecario)usuario;
             if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
               respuesta="Ingreso el bibliotecario "+usuario.getNombre();
