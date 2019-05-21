@@ -78,13 +78,22 @@ public class DemoApplication {
           Estudiante estud = (Estudiante) usuario;
           if(estud.getCorreo().equals(correo))
             {
-                  respuesta= "0";//Para estudiante
+                  //Para estudiante
+                  if(estud.getContraseña().equals(contraseña)){
+                    respuesta ="0";
+                  }else 
+                  respuesta = "Incorrect password";
             }
         }else if(usuario instanceof Bibliotecario){
           Bibliotecario bib = (Bibliotecario) usuario;
-           if(bib.getCorreo().equals(correo) && bib.getContraseña().equals(contraseña) )
+           if(bib.getCorreo().equals(correo) )
               {
+                if(bib.getContraseña().equals(contraseña)){
+
+                
                 respuesta= "1";//Para Bibliotecario
+                }else
+                respuesta = "Incorrect password"
               }
           }
 
@@ -94,7 +103,7 @@ public class DemoApplication {
     }
     else
     {
-      respuesta="2";
+      respuesta="User doesn't exist";
     }
     return respuesta;
 
