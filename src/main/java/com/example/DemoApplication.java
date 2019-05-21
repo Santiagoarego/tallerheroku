@@ -74,7 +74,7 @@ public class DemoApplication {
     {
       for(Usuario usuario : users)
       {
-        if(usuario.getContraseña().equals(contrasena) && usuario.getCorreo().equals(correo))
+        if(usuario.getContrasena().equals(contrasena) && usuario.getCorreo().equals(correo))
         {
           if(usuario instanceof Estudiante)
           {
