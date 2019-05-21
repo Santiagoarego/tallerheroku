@@ -75,18 +75,21 @@ public class DemoApplication {
     {
       for(Usuario usuario : users)
       {
-        if(usuario.getContrasena().equals(contrasena) && usuario.getCorreo().equalsIgnoreCase(correo))
-        {
-          if(usuario instanceof Estudiante)
+        if(usuario instanceof Estudiante)
           {
-            respuesta="Ingreso el usuario "+usuario.getNombre();
-          }
-          else if(usuario instanceof Bibliotecario)
-          {
-            respuesta="Ingreso el bibliotecario "+usuario.getNombre();
-          }
-        }else
-        respuesta="Credenciales incorrectas";
+            Estudiante stud = (Estudiante)usuario;
+            if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
+              respuesta="Ingreso el usuario "+usuario.getNombre();
+            }else
+              respuesta = "Credenciales incorectas";
+          }else if(usuario instanceof Bibliotecario){
+            Bibliotecario stud = (Bibliotecario)usuario;
+            if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
+              respuesta="Ingreso el bibliotecario "+usuario.getNombre();
+          }else
+            respuesta="Credenciales incorrectas";
+       
+        }
       }
     }else
     respuesta="User doesn't exist";
