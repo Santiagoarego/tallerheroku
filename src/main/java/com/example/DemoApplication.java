@@ -23,10 +23,10 @@ public class DemoApplication {
     Arreglos sing = Arreglos.constructora();
     for(Usuario us : sing.getUsuarios()){
       if(us instanceof Estudiante){
-      usuarios+="Email: "+us.getCorreo()+" Password:"+us.getContrasena()+" Estudiante|| ";
+      usuarios+="Email: "+us.getCorreo()+" Password:"+us.getContrasena()+" Estudiante||\n";
       }
     else if(us instanceof Bibliotecario){
-      usuarios+=us.getCorreo()+" "+us.getContrasena()+" Bibliotecario || ";
+      usuarios+="Email: "+us.getCorreo()+" Password:"+us.getContrasena()+" Bibliotecario ||\n ";
     }
   }
     return usuarios+sing.getUsuarios().size();
