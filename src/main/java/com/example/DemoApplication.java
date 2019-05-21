@@ -74,23 +74,25 @@ public class DemoApplication {
     String contrasena = password;
     String respuesta = correo + contrasena;
     boolean existecorreo = this.existecorreo(correo);
+    boolean correoEstud = this.correoEstud(correo);
+    boolean correoBib = this.correoBiblio(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo==true)
     {
       for(Usuario usuario : users)
       {
-        if(usuario instanceof Estudiante)
+        if(correoEstud)
           {
             Estudiante stud = (Estudiante)usuario;
             if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
               respuesta="Ingreso el usuario "+usuario.getNombre();
             }else
               respuesta = "Credenciales incorectas";
-          } if(usuario instanceof Bibliotecario){
-            Bibliotecario stud = (Bibliotecario)usuario;
-            if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
-              respuesta="Ingreso el bibliotecario "+usuario.getNombre();
+          } else if(correoBib){
+              Bibliotecario stud = (Bibliotecario)usuario;
+              if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
+                respuesta="Ingreso el bibliotecario "+usuario.getNombre();
           }else
             respuesta="Credenciales incorrectas";
        
@@ -101,6 +103,36 @@ public class DemoApplication {
     return respuesta;
 
 }
+  boolean correoEstud(String correo){
+    ArrayList<Usuario> users = single.getUsuarios();
+    boolean respuesta = false;
+    for(Usuario us : users){
+      if(us instanceof Estudiante)
+          {
+           Estudiante stud =(Estudiante) us;
+            if(stud.getCorreo().equalsIgnoreCase(correo))
+            respuesta =  true;
+            else
+            respuesta = false;
+          }
+    }
+    return respuesta;
+  }
+  boolean correoBiblio(String correo){
+    ArrayList<Usuario> users = single.getUsuarios();
+    boolean respuesta = false;
+    for(Usuario us : users){
+      if(us instanceof Bibliotecario)
+          {
+           Bibliotecario stud =(Estudiante) us;
+            if(stud.getCorreo().equalsIgnoreCase(correo))
+            respuesta =  true;
+            else
+            respuesta = false;
+          }
+    }
+    return respuesta;
+  }
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
@@ -142,7 +174,7 @@ public class DemoApplication {
       if(usuario instanceof Estudiante)
       {
         Estudiante estud = (Estudiante) usuario;
-        if(estud.getCorreo().equals(correo))
+        if(estud.getCorreo().equalsIgnoreCase(correo))
         {
           existecorreo = true;
         }
@@ -150,7 +182,7 @@ public class DemoApplication {
       else if(usuario instanceof Bibliotecario)
       {
         Bibliotecario bibliot = (Bibliotecario) usuario;
-        if(bibliot.getCorreo().equals(correo))
+        if(bibliot.getCorreo().equalsIgnoreCase(correo))
         {
           existecorreo= true;
         }
