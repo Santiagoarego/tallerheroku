@@ -87,7 +87,7 @@ public class DemoApplication {
         }
       }
     }
-    return respuesta;
+    return correo""+""contraseña;
 
 }
   @RequestMapping("/verificacionexistencia")
