@@ -66,7 +66,7 @@ public class DemoApplication {
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
-    String respuesta = new String();
+    String respuesta = 2;
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
@@ -74,27 +74,19 @@ public class DemoApplication {
     {
       for(Usuario usuario : users)
       {
-        if (usuario instanceof Estudiante){
-          Estudiante estud = (Estudiante) usuario;
-          if(estud.getCorreo().equals(correo) && estud.getContraseña().equals(contraseña))
-            {
-                  //Para estudiant
-                    respuesta ="0";
-            }
-        }else if(usuario instanceof Bibliotecario){
-          Bibliotecario bib = (Bibliotecario) usuario;
-           if(bib.getCorreo().equals(correo) && bib.getContraseña().equals(contraseña))
-              {
-                respuesta= "1";//Para Bibliotecario
-              }
+        if(usuario.getContraseña().equals(contraseña) && usuario.getCorreo().equals(correo))
+        {
+          if(usuario instanceof Estudiante)
+          {
+            respuesta=1;
+          }
+          else if(usuario instanceof Bibliotecario)
+          {
+            respuesta=0;
+          }
+        }
+      }
     }
-  }
-}
-    else
-    {
-      respuesta="User doesn't exist";
-    }
-
     return respuesta;
 
 }
