@@ -34,7 +34,7 @@ public class DemoApplication {
 
   @RequestMapping("/crearUsuario")
   @ResponseBody
-  String crearUsuario(String nombre, String correo,String contrasena,String id,String facultad,String seleccion)
+  String crearUsuario(String nombre, String correo,String password,String id,String facultad,String seleccion)
   {
     boolean existecorreo = this.existecorreo(correo);
     boolean existeid = this.existeid(id);
@@ -45,13 +45,13 @@ public class DemoApplication {
     {
       if(seleccion.equals("0"))
       {
-        Estudiante estd = new Estudiante(nombre, correo, contrasena, id, facultad);
+        Estudiante estd = new Estudiante(nombre, correo, password, id, facultad);
         Usuario user = estd;
         single.addUsuario(user);
       }
       else
       {
-        Bibliotecario bibl = new Bibliotecario(nombre, correo, contrasena, id, facultad);
+        Bibliotecario bibl = new Bibliotecario(nombre, correo, password, id, facultad);
         Usuario user = bibl;
         single.addUsuario(user);
       }
