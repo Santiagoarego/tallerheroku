@@ -78,7 +78,6 @@ public class DemoApplication {
           Estudiante estud = (Estudiante) usuario;
           if(estud.getCorreo().equals(correo))
             {
-              if(estud.getContraseña().equals(contraseña))
                   respuesta= "0";//Para estudiante
             }
         }else if(usuario instanceof Bibliotecario){
