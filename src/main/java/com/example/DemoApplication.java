@@ -65,7 +65,8 @@ public class DemoApplication {
 
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
-  String ingresaUsuario(String correo, String contrasena){
+  String ingresaUsuario(String correo, String password){
+    String contrasena = password;
     String respuesta = correo + contrasena;
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
