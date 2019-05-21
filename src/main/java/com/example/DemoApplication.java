@@ -73,26 +73,26 @@ public class DemoApplication {
     if(existecorreo==true)
     {
       for(Usuario usuario : users)
-      { 
+      {
         if (usuario instanceof Estudiante){
           Estudiante estud = (Estudiante) usuario;
-          if(estud.getCorreo().equals(correo) && estud.getContraseña().equals(contraseña) )
+          if(estud.getCorreo().equals(correo) /*&& estud.getContraseña().equals(contraseña) */)
             {
-                return "0";//Para estudiante
+                respuesta= "0";//Para estudiante
             }
         }else if(usuario instanceof Bibliotecario){
           Bibliotecario bib = (Bibliotecario) usuario;
            if(bib.getCorreo().equals(correo) && bib.getContraseña().equals(contraseña) )
               {
-                return "1";//Para Bibliotecario
+                respuesta= "1";//Para Bibliotecario
               }
           }
-        
-       
-        
+
+
+
       }
     }return "2";
-    
+
   }
 
   @RequestMapping("/verificacionexistencia")
