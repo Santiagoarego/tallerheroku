@@ -104,6 +104,7 @@ public class DemoApplication {
 
 }
   boolean correoEstud(String correo){
+    Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     boolean respuesta = false;
     for(Usuario us : users){
@@ -119,12 +120,13 @@ public class DemoApplication {
     return respuesta;
   }
   boolean correoBiblio(String correo){
+    Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     boolean respuesta = false;
     for(Usuario us : users){
       if(us instanceof Bibliotecario)
           {
-           Bibliotecario stud =(Estudiante) us;
+           Bibliotecario stud =(Bibliotecario) us;
             if(stud.getCorreo().equalsIgnoreCase(correo))
             respuesta =  true;
             else
