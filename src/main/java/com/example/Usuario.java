@@ -4,18 +4,18 @@ public class Usuario {
     public String nombre;
     public String id;
     public String correo;
-    public String contraseña;
+    public String contrasena;
 
-    public Usuario(String nombre, String correo, String contraseña, String id) {
+    public Usuario(String nombre, String correo, String contrasena, String id) {
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.nombre = nombre;
         this.id = id;
     }
 
     public Usuario() {
         this.correo = "";
-        this.contraseña = "";
+        this.contrasena = "";
         this.nombre = "";
         this.id = null;
     }
@@ -28,13 +28,13 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
+    public String getContrasena() {
 
-        return this.contraseña;
+        return this.contrasena;
     }
 
-    public void setContraseña(String password) {
-        this.contraseña = password;
+    public void setContrasena(String password) {
+        this.contrasena = password;
     }
 
     public void setNombre(String nombre) {

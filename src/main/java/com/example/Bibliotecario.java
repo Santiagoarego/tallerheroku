@@ -4,9 +4,9 @@ public class Bibliotecario extends Usuario
 {
   private String dependencia;
 
-  public  Bibliotecario(String nombre, String correo, String contraseña, String id, String dependencia)
+  public  Bibliotecario(String nombre, String correo, String contrasena, String id, String dependencia)
   {
-    super(nombre, correo, contraseña, id);
+    super(nombre, correo, contrasena, id);
     this.dependencia = dependencia;
   }
 

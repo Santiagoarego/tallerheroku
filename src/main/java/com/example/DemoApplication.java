@@ -65,8 +65,8 @@ public class DemoApplication {
 
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
-  String ingresaUsuario(String correo, String contraseña){
-    String respuesta = correo + contraseña;
+  String ingresaUsuario(String correo, String contrasena){
+    String respuesta = correo + contrasena;
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
@@ -74,7 +74,7 @@ public class DemoApplication {
     {
       for(Usuario usuario : users)
       {
-        if(usuario.getContraseña().equals(contraseña) && usuario.getCorreo().equals(correo))
+        if(usuario.getContraseña().equals(contrasena) && usuario.getCorreo().equals(correo))
         {
           if(usuario instanceof Estudiante)
           {
