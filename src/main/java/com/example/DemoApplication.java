@@ -78,37 +78,24 @@ public class DemoApplication {
           Estudiante estud = (Estudiante) usuario;
           if(estud.getCorreo().equals(correo))
             {
-                  //Para estudiante
-                  if(estud.getContraseña().equals(contraseña)){
+                  //Para estudiant
                     respuesta ="0";
-                  }else 
-                  respuesta = "Incorrect password";
             }
         }else if(usuario instanceof Bibliotecario){
           Bibliotecario bib = (Bibliotecario) usuario;
            if(bib.getCorreo().equals(correo) )
               {
-                if(bib.getContraseña().equals(contraseña)){
-
-                
                 respuesta= "1";//Para Bibliotecario
-                }else
-                respuesta = "Incorrect password";
               }
-          }
-
-
-
-      }
     }
     else
     {
       respuesta="User doesn't exist";
     }
+
     return respuesta;
 
-  }
-
+}
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id){
