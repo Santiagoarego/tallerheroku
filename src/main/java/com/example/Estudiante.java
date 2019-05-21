@@ -34,6 +34,11 @@ public class Estudiante extends Usuario
     return this.facultad;
   }
 
+  public String getContraseña()
+  {
+    return this.contraseña;
+  }
+
   public void setFacultad(String name)
   {
     this.facultad=name;
