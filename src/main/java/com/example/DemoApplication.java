@@ -66,7 +66,7 @@ public class DemoApplication {
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String contraseña){
-    String respuesta = "2";
+    String respuesta = correo + contraseña;
     boolean existecorreo = this.existecorreo(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
@@ -87,7 +87,7 @@ public class DemoApplication {
         }
       }
     }
-    return correo""+""contraseña;
+    return respuesta;
 
 }
   @RequestMapping("/verificacionexistencia")
