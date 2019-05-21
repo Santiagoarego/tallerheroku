@@ -22,7 +22,7 @@ public class DemoApplication {
     String usuarios="";
     Arreglos sing = Arreglos.constructora();
     for(Usuario us : sing.getUsuarios()){
-      usuarios+=us.getNombre()+" "us.getContrasena();
+      usuarios+=us.getNombre()+" "+us.getContrasena();
     }
     return usuarios;
   }
