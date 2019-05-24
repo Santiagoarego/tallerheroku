@@ -90,7 +90,7 @@ public class DemoApplication {
               break;
             }else{
               respuesta = "Credenciales incorectas";
-              break;
+              
             }
              // respuesta="Estudiante";
           } else if(correoBib){
@@ -100,7 +100,7 @@ public class DemoApplication {
                 break;
               }else{
                 respuesta = "Credenciales incorectas";
-                break;
+                
               }
         }else{
           respuesta="No se que paso";
