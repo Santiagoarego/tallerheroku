@@ -96,10 +96,13 @@ public class DemoApplication {
           }else
             respuesta="Credenciales incorrectas";
        
+        }else{
+          respuesta="No se que paso";
         }
       }
-    }else
-    respuesta="User doesn't exist";
+    }else{
+      respuesta="User doesn't exist";
+    }
     return respuesta;
 
 }
