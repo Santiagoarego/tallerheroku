@@ -84,18 +84,19 @@ public class DemoApplication {
       {
         if(correoEstud)
           {
-            Estudiante stud = (Estudiante)usuario;
+            /*Estudiante stud = (Estudiante)usuario;
             if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
               respuesta="Ingreso el usuario "+usuario.getNombre();
             }else
-              respuesta = "Credenciales incorectas";
+              respuesta = "Credenciales incorectas";*/
+              respuesta="Estudiante";
           } else if(correoBib){
-              Bibliotecario stud = (Bibliotecario)usuario;
+              /*Bibliotecario stud = (Bibliotecario)usuario;
               if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
                 respuesta="Ingreso el bibliotecario "+usuario.getNombre();
           }else
             respuesta="Credenciales incorrectas";
-       
+       */ respuesta="Bibliotecario";
         }else{
           respuesta="No se que paso";
         }
