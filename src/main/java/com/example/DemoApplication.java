@@ -84,12 +84,13 @@ public class DemoApplication {
       {
         if(correoEstud)
           {
-            /*Estudiante stud = (Estudiante)usuario;
-            if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
+            Estudiante stud = (Estudiante)usuario;
+            if(stud.getCorreo().equalsIgnoreCase(correo)){
               respuesta="Ingreso el usuario "+usuario.getNombre();
-            }else
-              respuesta = "Credenciales incorectas";*/
-              respuesta="Estudiante";
+            }else{
+              respuesta = "Credenciales incorectas";
+            }
+             // respuesta="Estudiante";
           } else if(correoBib){
               /*Bibliotecario stud = (Bibliotecario)usuario;
               if(stud.getContrasena().equals(contrasena)&& stud.getCorreo().equalsIgnoreCase(correo)){
