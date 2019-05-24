@@ -78,7 +78,7 @@ public class DemoApplication {
     boolean correoBib = this.correoBiblio(correo);
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
-    if(existecorreo==true)
+    if(existecorreo)
     {
       for(Usuario usuario : users)
       {
@@ -102,8 +102,6 @@ public class DemoApplication {
                 respuesta = "Credenciales incorectas";
                 
               }
-        }else{
-          respuesta="No se que paso";
         }
       }
     }else{
@@ -120,7 +118,7 @@ public class DemoApplication {
       if(us instanceof Estudiante)
           {
            Estudiante stud =(Estudiante) us;
-            if(stud.getCorreo().equalsIgnoreCase(correo))
+            if(stud.getCorreo().equals(correo))
             respuesta =  true;
             else
             respuesta = false;
@@ -136,7 +134,7 @@ public class DemoApplication {
       if(us instanceof Bibliotecario)
           {
            Bibliotecario stud =(Bibliotecario) us;
-            if(stud.getCorreo().equalsIgnoreCase(correo))
+            if(stud.getCorreo().equals(correo))
             respuesta =  true;
             else
             respuesta = false;
