@@ -85,7 +85,7 @@ public class DemoApplication {
         if(correoEstud)
           {
             Estudiante stud = (Estudiante)usuario;
-            if(stud.getCorreo().equalsIgnoreCase(correo)){
+            if(stud.getCorreo().equals(correo)){
               respuesta="Ingreso el usuario "+usuario.getNombre();
             }else{
               respuesta = "Credenciales incorectas";
