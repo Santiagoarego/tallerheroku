@@ -74,8 +74,7 @@ public class DemoApplication {
     String contrasena = password;
     String respuesta ="";
     boolean existecorreo = this.existecorreo(correo);
-    boolean correoEstud = this.correoEstud(correo);
-    boolean correoBib = this.correoBiblio(correo);
+    
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo)
@@ -88,7 +87,7 @@ public class DemoApplication {
         if(usuario instanceof Estudiante)
           {
             respuesta="Entro a correo estudiante";
-            if(usuario.getCorreo().equals(correo) ){
+            if(usuario.getCorreo().equalsIgnoreCase(correo) ){
               if(usuario.getContrasena().equals(password)){
                 respuesta="Ingreso el usuario "+usuario.getNombre();
                 break;
@@ -104,7 +103,7 @@ public class DemoApplication {
           } else if(usuario instanceof Bibliotecario){
             respuesta="Entro a correo estudiante";
               
-              if(usuario.getCorreo().equals(correo)){
+              if(usuario.getCorreo().equalsIgnoreCase(correo)){
                 if(usuario.getContrasena().equals(password)){
                 respuesta="Ingreso el biblio "+usuario.getNombre();
                 break;
@@ -128,38 +127,7 @@ public class DemoApplication {
 
   }
 
-  boolean correoEstud(String correo){
-    Arreglos single = Arreglos.constructora();
-    ArrayList<Usuario> users = single.getUsuarios();
-    boolean respuesta = false;
-    for(Usuario us : users){
-      if(us instanceof Estudiante)
-          {
-           
-            if(us.getCorreo().equals(correo))
-            respuesta =  true;
-            else
-            respuesta = false;
-          }
-    }
-    return respuesta;
-  }
-  boolean correoBiblio(String correo){
-    Arreglos single = Arreglos.constructora();
-    ArrayList<Usuario> users = single.getUsuarios();
-    boolean respuesta = false;
-    for(Usuario us : users){
-      if(us instanceof Bibliotecario)
-          {
-           
-            if(us.getCorreo().equals(correo))
-            respuesta =  true;
-            else
-            respuesta = false;
-          }
-    }
-    return respuesta;
-  }
+  
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
