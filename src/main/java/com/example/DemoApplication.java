@@ -84,10 +84,10 @@ public class DemoApplication {
       {
         if(correoEstud)
           {
-            Estudiante stud = (Estudiante)usuario;
-            if(stud.getCorreo().equals(correo) ){
-              if(stud.getContrasena().equals(password)){
-                respuesta="Ingreso el usuario "+stud.getNombre();
+            
+            if(usuario.getCorreo().equals(correo) ){
+              if(usuario.getContrasena().equals(password)){
+                respuesta="Ingreso el usuario "+usuario.getNombre();
                 break;
               }else{
                 respuesta="Incorrect password";
@@ -99,9 +99,9 @@ public class DemoApplication {
             }
              // respuesta="Estudiante";
           } else if(correoBib){
-              Bibliotecario stud = (Bibliotecario)usuario;
-              if(stud.getCorreo().equals(correo)){
-                if(stud.getContrasena().equals(password)){
+              
+              if(usuario.getCorreo().equals(correo)){
+                if(usuario.getContrasena().equals(password)){
                 respuesta="Ingreso el biblio "+usuario.getNombre();
                 break;
                 }else{
