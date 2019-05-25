@@ -118,7 +118,7 @@ public class DemoApplication {
               }
         }else{
           respuesta="excepcion";
-          ingresaUsuario(correo,password);
+          
         }
       }
     }else{
@@ -135,8 +135,8 @@ public class DemoApplication {
     for(Usuario us : users){
       if(us instanceof Estudiante)
           {
-           Estudiante stud =(Estudiante) us;
-            if(stud.getCorreo().equals(correo))
+           
+            if(us.getCorreo().equals(correo))
             respuesta =  true;
             else
             respuesta = false;
@@ -151,8 +151,8 @@ public class DemoApplication {
     for(Usuario us : users){
       if(us instanceof Bibliotecario)
           {
-           Bibliotecario stud =(Bibliotecario) us;
-            if(stud.getCorreo().equals(correo))
+           
+            if(us.getCorreo().equals(correo))
             respuesta =  true;
             else
             respuesta = false;
