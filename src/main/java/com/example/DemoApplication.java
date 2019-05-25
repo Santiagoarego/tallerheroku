@@ -79,7 +79,8 @@ public class DemoApplication {
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo)
-    {
+    { 
+      respuesta = "Entro al ciclo";
       for(Usuario usuario : users)
       {
         if(correoEstud)
