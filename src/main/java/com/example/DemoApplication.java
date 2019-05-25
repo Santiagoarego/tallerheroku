@@ -85,7 +85,7 @@ public class DemoApplication {
       
       {
         respuesta= "ciclo";
-        if(correoEstud)
+        if(usuario instanceof Estudiante)
           {
             respuesta="Entro a correo estudiante";
             if(usuario.getCorreo().equals(correo) ){
@@ -101,7 +101,7 @@ public class DemoApplication {
               
             }
              // respuesta="Estudiante";
-          } else if(correoBib){
+          } else if(usuario instanceof Biblioteca){
             respuesta="Entro a correo estudiante";
               
               if(usuario.getCorreo().equals(correo)){
