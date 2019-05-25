@@ -85,7 +85,7 @@ public class DemoApplication {
       {
         if(correoEstud)
           {
-            
+            respuesta="Entro a correo estudiante";
             if(usuario.getCorreo().equals(correo) ){
               if(usuario.getContrasena().equals(password)){
                 respuesta="Ingreso el usuario "+usuario.getNombre();
@@ -100,6 +100,7 @@ public class DemoApplication {
             }
              // respuesta="Estudiante";
           } else if(correoBib){
+            respuesta="Entro a correo estudiante";
               
               if(usuario.getCorreo().equals(correo)){
                 if(usuario.getContrasena().equals(password)){
