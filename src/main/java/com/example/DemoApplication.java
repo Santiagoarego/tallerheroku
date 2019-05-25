@@ -82,8 +82,9 @@ public class DemoApplication {
     { 
       respuesta = "existe";
       for(Usuario usuario : users)
-      respuesta= "ciclo";
+      
       {
+        respuesta= "ciclo";
         if(correoEstud)
           {
             respuesta="Entro a correo estudiante";
