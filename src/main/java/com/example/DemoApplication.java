@@ -80,8 +80,9 @@ public class DemoApplication {
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo)
     { 
-      respuesta = "Entro al ciclo";
+      respuesta = "existe";
       for(Usuario usuario : users)
+      respuesta= "ciclo";
       {
         if(correoEstud)
           {
