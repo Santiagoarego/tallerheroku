@@ -101,7 +101,7 @@ public class DemoApplication {
               
             }
              // respuesta="Estudiante";
-          } else if(usuario instanceof Biblioteca){
+          } else if(usuario instanceof Bibliotecario){
             respuesta="Entro a correo estudiante";
               
               if(usuario.getCorreo().equals(correo)){
