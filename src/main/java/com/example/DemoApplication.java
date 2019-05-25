@@ -63,16 +63,16 @@ public class DemoApplication {
     }
     else
     {
-      return "Ya esta usado";
+      return "ID o correo en uso";
     }
-    return "Se guardo";
+    return "Registro exitoso";
   }
 
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String password){
     String contrasena = password;
-    String respuesta = correo + contrasena;
+    String respuesta ="";
     boolean existecorreo = this.existecorreo(correo);
     boolean correoEstud = this.correoEstud(correo);
     boolean correoBib = this.correoBiblio(correo);
@@ -119,7 +119,8 @@ public class DemoApplication {
     }
     return respuesta;
 
-}
+  }
+
   boolean correoEstud(String correo){
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
