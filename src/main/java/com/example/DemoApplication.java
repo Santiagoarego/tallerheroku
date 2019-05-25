@@ -118,6 +118,7 @@ public class DemoApplication {
               }
         }else{
           respuesta="excepcion";
+          ingresaUsuario(correo,password);
         }
       }
     }else{
