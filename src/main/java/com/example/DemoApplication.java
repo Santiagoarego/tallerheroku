@@ -120,11 +120,11 @@ public class DemoApplication {
                 respuesta="1";
                 break;
               }else{
-                respuesta="Incorrect password";
+                respuesta="3";
                 break;
               }
             }else{
-              respuesta = "Credenciales incorectas";
+              respuesta = "4";
 
             }
              // respuesta="Estudiante";
@@ -136,11 +136,11 @@ public class DemoApplication {
                 respuesta="2";
                 break;
                 }else{
-                  respuesta="Incorrect password";
+                  respuesta="3";
                   break;
                 }
               }else{
-                respuesta = "Credenciales incorectas";
+                respuesta = "4";
 
               }
         }else{
@@ -149,7 +149,7 @@ public class DemoApplication {
         }
       }
     }else{
-      respuesta="User doesn't exist";
+      respuesta="5";
     }
     return respuesta;
 
