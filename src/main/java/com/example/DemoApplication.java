@@ -68,6 +68,19 @@ public class DemoApplication {
     return "Registro exitoso";
   }
 
+  @RequestMapping("/crearLibro")
+  @ResponseBody
+  String crearLibro(String nombre, String autor,String keywords,String ISBN,String cantidad,String descripcion)
+  {
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+
+    Libro libro = new Libro(nombre, autor, keywords, ISBN, cantidad, descripcion);
+    single.addLibro(libro);
+
+    return "Registro exitoso";
+  }
+
   @RequestMapping("/ingresaUsuario")
   @ResponseBody
   String ingresaUsuario(String correo, String password){
