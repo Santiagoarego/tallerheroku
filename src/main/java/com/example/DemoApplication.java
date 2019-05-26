@@ -161,7 +161,7 @@ public class DemoApplication {
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();
     for(Libro libro : libros){
-      respuesta += "Nombre: "+libro.getNombre()+" ISBN: "+libro.getISBN()+" Autor: "+libro.getAutor()+" Cantidad de ejemplares "+libro.getCantidad()+"\n";
+      respuesta += "Nombre: "+libro.getNombre()+"\n ISBN: "+libro.getISBN()+"\n Autor: "+libro.getAutor()+"\n Cantidad de ejemplares "+libro.getCantidad()+"\n\n";
     }
     return respuesta;
   }
