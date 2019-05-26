@@ -31,6 +31,21 @@ public class DemoApplication {
   }
     return usuarios+sing.getUsuarios().size();
   }
+  @RequestMapping("/libros")
+  @ResponseBody
+  String libros() {
+    String usuarios="";
+    Arreglos sing = Arreglos.constructora();
+    for(Libro us : sing.getLibros()){
+      
+      usuarios+="Isbn: "+us.getISBN()+" NOMBRE:"+us.getNombre()+" Cantidades= " + us.getCantidad();
+      
+    
+      
+    
+  }
+    return usuarios+sing.getLibros().size();
+  }
   @RequestMapping("/pruebaDeDatos")
   @ResponseBody
   String pruebaDeDatos(String nombre){
@@ -70,7 +85,7 @@ public class DemoApplication {
 
   @RequestMapping("/crearLibro")
   @ResponseBody
-  String crearLibro(String nombre, String autor,String keywords,String ISBN,String cantidad,String descripcion)
+  String crearLibro(String nombre, String autor,String keywords,String ISBN,int cantidad,String descripcion)
   {
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();

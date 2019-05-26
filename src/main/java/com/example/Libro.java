@@ -6,10 +6,10 @@ public class Libro
   private String autor;
   private String keywords;
   private String ISBN;
-  private String cantidad;
+  private int cantidad;
   private String descripcion;
 
-  public  Libro(String nombre, String autor, String keywords, String ISBN, String cantidad, String descripcion)
+  public  Libro(String nombre, String autor, String keywords, String ISBN, int cantidad, String descripcion)
   {
     this.nombre = nombre;
     this.autor = autor;
@@ -25,7 +25,7 @@ public class Libro
     this.autor="";
     this.keywords = "";
     this.ISBN = "";
-    this.cantidad = "";
+    this.cantidad = 0;
     this.descripcion = "";
   }
 
@@ -49,7 +49,7 @@ public class Libro
     return this.ISBN;
   }
 
-  public String getCantidad()
+  public int getCantidad()
   {
     return this.cantidad;
   }
@@ -79,9 +79,15 @@ public class Libro
     this.keywords=keywords;
   }
 
-  public void setCantidad(String cantidad)
+  public void setCantidad(int cantidad)
   {
     this.cantidad=cantidad;
+  }
+  public void disminuirCantidad(){
+    this.cantidad--;
+  }
+  public void aumentarCantidad(){
+    this.cantidad++;
   }
 
   public void setDescripcion(String descripcion)
