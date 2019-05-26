@@ -74,14 +74,14 @@ public class DemoApplication {
     String contrasena = password;
     String respuesta ="";
     boolean existecorreo = this.existecorreo(correo);
-    
+
     Arreglos single = Arreglos.constructora();
     ArrayList<Usuario> users = single.getUsuarios();
     if(existecorreo)
-    { 
+    {
       respuesta = "existe";
       for(Usuario usuario : users)
-      
+
       {
         respuesta= "ciclo";
         if(usuario instanceof Estudiante)
@@ -89,7 +89,7 @@ public class DemoApplication {
             respuesta="Entro a correo estudiante";
             if(usuario.getCorreo().equalsIgnoreCase(correo) ){
               if(usuario.getContrasena().equals(password)){
-                respuesta="Ingreso el usuario "+usuario.getNombre();
+                respuesta="1";
                 break;
               }else{
                 respuesta="Incorrect password";
@@ -97,12 +97,12 @@ public class DemoApplication {
               }
             }else{
               respuesta = "Credenciales incorectas";
-              
+
             }
              // respuesta="Estudiante";
           } else if(usuario instanceof Bibliotecario){
             respuesta="Entro a correo estudiante";
-              
+
               if(usuario.getCorreo().equalsIgnoreCase(correo)){
                 if(usuario.getContrasena().equals(password)){
                 respuesta="Ingreso el biblio "+usuario.getNombre();
@@ -113,11 +113,11 @@ public class DemoApplication {
                 }
               }else{
                 respuesta = "Credenciales incorectas";
-                
+
               }
         }else{
           respuesta="excepcion";
-          
+
         }
       }
     }else{
@@ -127,7 +127,7 @@ public class DemoApplication {
 
   }
 
-  
+
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
