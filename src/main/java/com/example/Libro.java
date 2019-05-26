@@ -9,7 +9,7 @@ public class Libro
   private String cantidad;
   private String descripcion;
 
-  public  Libros(String nombre, String autor, String keywords, String ISBN, String cantidad, String descripcion)
+  public  Libro(String nombre, String autor, String keywords, String ISBN, String cantidad, String descripcion)
   {
     this.nombre = nombre;
     this.autor = autor;
@@ -19,7 +19,7 @@ public class Libro
     this.descripcion = descripcion;
   }
 
-  public  Estudiante()
+  public  Libro()
   {
     this.nombre = "";
     this.autor="";
