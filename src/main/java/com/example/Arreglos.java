@@ -13,7 +13,8 @@ public class Arreglos {
 
     private static Arreglos instancia = null;
     private ArrayList<Usuario> usuarios = new ArrayList();
-    public String IdSession; 
+    private ArrayList<Libro> libros = new ArrayList();
+    public String IdSession;
     public static Arreglos constructora() {
 
         if (instancia == null) {
@@ -40,4 +41,14 @@ public class Arreglos {
 	{
 		this.usuarios.add(usuario);
 	}
+
+    public ArrayList<Libro> getLibros()
+    {
+      return this.libros;
+    }
+
+    public void addLibro(Libro libro)
+    {
+      this.libros.add(libro);
+    }
 }
