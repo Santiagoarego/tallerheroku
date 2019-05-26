@@ -154,6 +154,17 @@ public class DemoApplication {
     return respuesta;
 
   }
+  @RequestMapping("/devuelveLibros")
+  @ResponseBody
+  String devuelveLibros(){
+    String respuesta="";
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    for(Libro libro : libros){
+      respuesta += "Nombre: "+libro.getNombre()+" ISBN: "+libro.getISBN()+" Autor: "+libro.getAutor()+" Cantidad de ejemplares "+libro.getCantidad()+"\n";
+    }
+    return respuesta;
+  }
 
 
   @RequestMapping("/verificacionexistencia")
