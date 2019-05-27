@@ -471,6 +471,47 @@ public class DemoApplication {
     }
     return existecorreo;
   }
+  @RequestMapping("/mayorPrestado")
+  @ResponseBody
+  String mayorPrestado(){
+    String respuesta=this.maximo();
+    String resultante = "";
+    Arreglos sing = Arreglos.constructora();
+    ArrayList<Usuario> us = sing.getUsuarios();
+    if(respuesta.equals("0")){
+      resultante="No hay prestamos";
+    }else{
+      for(Usuario user : us){
+        if(user instanceof Estudiante){
+          Estudiante estud = (Estudiante)user;
+          if(Estud.getId().equals(respuesta())){
+            resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n"
+          }
+        }
+      }
+    }
+    return resultante;
+  }
+
+  String maximo(){
+    String usuario="";
+    int cantidad =0;
+    Arreglos sing = Arreglos.constructora();
+    ArrayList<Prestado> prestados = sing.getPrestados();
+    if(prestados.size()>0){
+      for(Prestado pres : prestados){
+        if(pres.getCantidad()>cantidad){
+          cantidad = pres.getCantidad();
+          usuario = pres.getId();
+        }
+      }
+    }else {
+    usuario="0";
+    }
+    return usuario;
+  }
+
+  
 
 
   public static void main(String[] args) {
