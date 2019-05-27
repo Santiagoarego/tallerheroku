@@ -98,6 +98,21 @@ public class DemoApplication {
 
     return existeISBN;
   }
+  @RequestMapping("/crearPrestamo")
+  @ResponseBody
+  String crearPrestamo(String id, String ISBN,String fecha,int dia)
+  {
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Prestamo> libros = single.getLibros();
+    if(this.existeISBN(ISBN)){
+    Prestamo libro = new Prestamo(id, ISBN, fecha, dia);
+    single.addPrestamo(libro);
+    return "Registro exitoso";
+    }else
+    return "No existe ese libro";
+
+  }
+
   @RequestMapping("/crearLibro")
   @ResponseBody
   String crearLibro(String nombre, String autor,String keywords,String ISBN,int cantidad,String descripcion)

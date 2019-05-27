@@ -17,6 +17,10 @@ public class Prestamo
 
   public  Prestamo()
   {
+    this.Id = "";
+    this.ISBN = "";
+    this.fecha = "";
+    this.dia = "";
   }
 
   public int getId()
