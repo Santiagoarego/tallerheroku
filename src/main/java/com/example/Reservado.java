@@ -4,11 +4,13 @@ public class Reservado
 {
   private String Id;
   private String ISBN;
+  private int cantidad;
 
   public  Reservado(String Id, String ISBN)
   {
     this.Id = Id;
     this.ISBN = ISBN;
+    this.cantidad=1;
   }
 
   public  Reservado()
@@ -35,5 +37,15 @@ public class Reservado
   public void setISBN(String isbn)
   {
     this.ISBN = isbn;
+  }
+
+  public int getCantidad()
+  {
+    return this.cantidad;
+  }
+
+  public void subirCantidad()
+  {
+    this.cantidad++;
   }
 }

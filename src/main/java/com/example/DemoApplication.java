@@ -82,6 +82,24 @@ public class DemoApplication {
     }
     return "Registro exitoso";
   }
+
+  boolean existePrestado(String id)
+  {
+    boolean existeISBN=false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Prestado> libros= single.getLibros();
+    for(Prestado libro :libros)
+    {
+
+     if(libro.getId().equals(id)){
+       existeISBN=true;
+       break;
+     }
+    }
+
+    return existeISBN;
+  }
+
   boolean existeISBN(String ISBN)
   {
     boolean existeISBN=false;
@@ -104,15 +122,27 @@ public class DemoApplication {
   {
     Arreglos single = Arreglos.constructora();
     ArrayList<Prestamo> libros = single.getPrestamos();
+    ArrayList<Prestado> prestados = single.getPrestados();
     if(this.existeISBN(ISBN)){
 
     this.disminuyeLibro(ISBN);
 
     Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
-
-    Prestado press = new Prestado(id, ISBN);
-
-    single.addPrestado(press);
+      if(!this.existePrestado(id))
+      {
+        Prestado press = new Prestado(id, ISBN);
+        single.addPrestado(press);
+      }
+      else
+      {
+        for(Prestado prestad : prestados)
+        {
+          if(prestad.getId().equals(id))
+          {
+            prestad.subirCantidad();
+          }
+        }
+      }
 
     single.addPrestamo(pres);
 
@@ -130,15 +160,28 @@ public class DemoApplication {
   {
     Arreglos single = Arreglos.constructora();
     ArrayList<Reserva> libros = single.getReservas();
+    ArrayList<Reservado> reservas = single.getReservados();
     if(this.existeISBN(ISBN)){
 
     this.disminuyeLibro(ISBN);
 
+      if(!this.existeReservado(id))
+      {
+        Reservado press = new Reservado(id, ISBN);
+        single.addReservado(press);
+      }
+      else
+      {
+        for(Reservado prestad : reservas)
+        {
+          if(prestad.getId().equals(id))
+          {
+            prestad.subirCantidad();
+          }
+        }
+      }
+
     Reserva pres = new Reserva(id, ISBN, fechahoy, fecharetira, dia);
-
-    Reservado reser = new Reservado(id, ISBN);
-
-    single.addReservado(reser);
 
     single.addReserva(pres);
 
@@ -146,7 +189,6 @@ public class DemoApplication {
     }
     else
     return "No existe ese libro";
-
   }
 
 
@@ -249,7 +291,6 @@ public class DemoApplication {
       rta="0";
     }
     return rta;
-
   }
   @RequestMapping("/devuelveLibro")
   @ResponseBody

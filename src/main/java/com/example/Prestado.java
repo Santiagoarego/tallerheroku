@@ -4,11 +4,13 @@ public class Prestado
 {
   private String Id;
   private String ISBN;
+  private int cantidad;
 
   public  Prestado(String Id, String ISBN)
   {
     this.Id = Id;
     this.ISBN = ISBN;
+    this.cantidad=1;
   }
 
   public  Prestado()
@@ -35,5 +37,15 @@ public class Prestado
   public void setISBN(String isbn)
   {
     this.ISBN = isbn;
+  }
+
+  public int getCantidad()
+  {
+    return this.cantidad;
+  }
+
+  public void subirCantidad()
+  {
+    this.cantidad++;
   }
 }
