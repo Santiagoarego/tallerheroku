@@ -86,7 +86,7 @@ public class DemoApplication {
   {
     boolean existeISBN=false;
     Arreglos single = Arreglos.constructora();
-    ArrayList<Libros> libros= single.getLibros();
+    ArrayList<Libro> libros= single.getLibros();
     for(Libro libro :libros)
     {
 
