@@ -7,7 +7,7 @@ public class Prestamo
   private String fecha;
   private int dia;
 
-  public  Prestamo(int Id, String ISBN, String fecha, int dia)
+  public  Prestamo(String Id, String ISBN, String fecha, int dia)
   {
     this.Id = Id;
     this.ISBN = ISBN;
@@ -20,7 +20,7 @@ public class Prestamo
     this.Id = "";
     this.ISBN = "";
     this.fecha = "";
-    this.dia = "";
+    this.dia = 0;
   }
 
   public int getId()

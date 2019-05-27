@@ -103,7 +103,7 @@ public class DemoApplication {
   String crearPrestamo(String id, String ISBN,String fecha,int dia)
   {
     Arreglos single = Arreglos.constructora();
-    ArrayList<Prestamo> libros = single.getLibros();
+    ArrayList<Prestamo> libros = single.getPrestamos();
     if(this.existeISBN(ISBN)){
     Prestamo libro = new Prestamo(id, ISBN, fecha, dia);
     single.addPrestamo(libro);
