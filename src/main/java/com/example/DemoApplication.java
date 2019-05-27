@@ -110,9 +110,9 @@ public class DemoApplication {
 
     Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
 
-    Prestado pres = new Prestado(id, ISBN);
+    Prestado press = new Prestado(id, ISBN);
 
-    single.addPrestamo(pres);
+    single.addPrestado(press);
 
     single.addPrestamo(pres);
 
