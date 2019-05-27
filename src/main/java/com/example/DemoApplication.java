@@ -37,12 +37,12 @@ public class DemoApplication {
     String usuarios="";
     Arreglos sing = Arreglos.constructora();
     for(Libro us : sing.getLibros()){
-      
+
       usuarios+="Isbn: "+us.getISBN()+" NOMBRE:"+us.getNombre()+" Cantidades= " + us.getCantidad();
-      
-    
-      
-    
+
+
+
+
   }
     return usuarios+sing.getLibros().size();
   }
@@ -110,7 +110,7 @@ public class DemoApplication {
     return "Registro exitoso";
     }else
     return "ISBN ya en uso";
-    
+
   }
 
   @RequestMapping("/ingresaUsuario")
@@ -193,7 +193,7 @@ public class DemoApplication {
       if(libro.getISBN().equals(ISBN)){
         rta="1";
         break;
-      }else 
+      }else
       rta="0";
     }
     return rta;
@@ -209,7 +209,7 @@ public class DemoApplication {
       if(libro.getISBN().equals(ISBN)){
         rta=libro.getISBN()+","+libro.getNombre()+","+libro.getAutor()+","+libro.getCantidad()+","+libro.getKeywords()+","+libro.getDescripcion();
         break;
-      }else 
+      }else
       rta="0";
     }
     return rta;
@@ -231,7 +231,7 @@ public class DemoApplication {
         libro.setDescripcion(descripcion);
         rta="1";
         break;
-      }else 
+      }else
       rta="0";
     }
     return rta;
@@ -248,6 +248,26 @@ public class DemoApplication {
         Bibliotecario bib = (Bibliotecario)us;
         if(bib.getCorreo().equalsIgnoreCase(correo)){
           rta= bib.getNombre()+","+bib.getCorreo()+","+bib.getId()+","+bib.getDependencia();
+          break;
+        }else
+        rta = "0";
+      }
+      rta="3";
+    }
+    return rta;
+  }
+
+  @RequestMapping("/devuelveEstudiante")
+  @ResponseBody
+  String devuelveEstudiante(String correo){
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Usuario> users = single.getUsuarios();
+    String rta ="";
+    for(Usuario us:users){
+      if(us instanceof Estudiante){
+        Estudiante bib = (Estudiante)us;
+        if(bib.getCorreo().equalsIgnoreCase(correo)){
+          rta= bib.getNombre()+","+bib.getCorreo()+","+bib.getId()+","+bib.getContrasena();
           break;
         }else
         rta = "0";
