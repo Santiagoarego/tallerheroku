@@ -220,6 +220,24 @@ public class DemoApplication {
     return rta;
 
   }
+  @RequestMapping("/devuelveBibliotecario")
+  @ResponseBody
+  String devuelveBibliotecario(String correo){
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Usuario> users = single.getUsuarios();
+    String rta ="";
+    for(Usuario us:users){
+      if(us instanceof Bibliotecario){
+        Bibliotecario bib = (Bibliotecario)us;
+        if(bib.getCorreo().equalsIgnoreCase(correo)){
+          rta= bib.getNombre()+","+bib.getCorreo()+","+bib.getId()+","+bib.getDependencia();
+          break;
+        }else
+        rta = "0"
+      }
+    }
+    return rta;
+  }
   @RequestMapping("/eliminarLibro")
   @ResponseBody
   String eliminarLibro(String ISBN){
