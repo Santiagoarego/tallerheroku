@@ -476,6 +476,7 @@ public class DemoApplication {
   String mayorPrestado(){
     String respuesta=this.maximo();
     String resultante = "";
+    int max = this.librosPrestados();
     Arreglos sing = Arreglos.constructora();
     ArrayList<Usuario> us = sing.getUsuarios();
     if(respuesta.equals("0")){
@@ -485,7 +486,7 @@ public class DemoApplication {
         if(user instanceof Estudiante){
           Estudiante estud = (Estudiante)user;
           if(estud.getCorreo().equals(respuesta)){
-            resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n";
+            resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId: "+estud.getId()+"\nCantidad de libros prestados: "+max;
             break;
           }
         }
@@ -512,7 +513,23 @@ public class DemoApplication {
     }
     return usuario;
   }
-
+  @RequestMapping("/librosPrestados")
+  @ResponseBody
+    int librosPrestados(){
+      
+      int cantidad =0;
+      Arreglos sing = Arreglos.constructora();
+      ArrayList<Prestado> prestados = sing.getPrestados();
+      if(prestados.size()>0){
+        for(Prestado pres : prestados){
+          if(pres.getCantidad()>cantidad){
+            cantidad = pres.getCantidad();
+            
+          }
+        }
+      }
+      return cantidad;
+    }
 
   
 
