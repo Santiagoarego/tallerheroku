@@ -68,4 +68,13 @@ public class Arreglos {
     public void setPrestamos(ArrayList<Prestamo> usuarios1) {
         this.prestamos = usuarios1;
     }
+
+    public void guardaLibro(Libro libro) {
+        libros.add(libro);
+    }
+
+    public void borrarLibro(Libro libro)
+    {
+      libros.remove();
+    }
 }

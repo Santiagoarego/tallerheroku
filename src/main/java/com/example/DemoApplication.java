@@ -105,10 +105,12 @@ public class DemoApplication {
     Arreglos single = Arreglos.constructora();
     ArrayList<Prestamo> libros = single.getPrestamos();
     if(this.existeISBN(ISBN)){
-    Prestamo libro = new Prestamo(id, ISBN, fecha, dia);
+
     single.addPrestamo(libro);
+
     return "Registro exitoso";
-    }else
+    }
+    else
     return "No existe ese libro";
 
   }
@@ -223,6 +225,21 @@ public class DemoApplication {
     for(Libro libro:libros){
       if(libro.getISBN().equals(ISBN)){
         rta=libro.getISBN()+","+libro.getNombre()+","+libro.getAutor()+","+libro.getCantidad()+","+libro.getKeywords()+","+libro.getDescripcion();
+        break;
+      }else
+      rta="0";
+    }
+    return rta;
+
+  }
+
+  Libro disminuyeLibro(String ISBN){
+    Libro rta;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    for(Libro libro:libros){
+      if(libro.getISBN().equals(ISBN)){
+        libro.disminuirCantidad();
         break;
       }else
       rta="0";
