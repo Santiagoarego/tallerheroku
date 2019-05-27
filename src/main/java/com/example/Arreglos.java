@@ -73,8 +73,4 @@ public class Arreglos {
         libros.add(libro);
     }
 
-    public void borrarLibro(Libro libro)
-    {
-      libros.remove();
-    }
 }
