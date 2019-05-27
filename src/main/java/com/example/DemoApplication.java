@@ -198,6 +198,28 @@ public class DemoApplication {
     return rta;
 
   }
+  @RequestMapping("/actualizarLibro")
+  @ResponseBody
+  String actualizarLibro(String nombre, String autor,String keywords,String ISBN,int cantidad,String descripcion,String ISBNanterior){
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    String rta ="";
+    for(Libro libro:libros){
+      if(libro.getISBN().equals(ISBNanterior)){
+        libro.setISBN(ISBN);
+        libro.setNombre(nombre);
+        libro.setAutor(autor);
+        libro.setKeywords(keywords);
+        libro.setCantidad(cantidad);
+        libro.setDescripcion(descripcion);
+        rta="1";
+        break;
+      }else 
+      rta="0";
+    }
+    return rta;
+
+  }
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
