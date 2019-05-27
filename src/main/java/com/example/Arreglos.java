@@ -111,6 +111,6 @@ public class Arreglos {
       this.prestados.add(libro);
     }
     public void setPrestados(ArrayList<Prestado> reservas) {
-        this.prestados = reservas;
+        this.prestados = reservas;}
 
 }
