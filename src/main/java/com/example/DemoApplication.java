@@ -108,7 +108,7 @@ public class DemoApplication {
 
     Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
 
-    single.addPrestamo(libro);
+    single.addPrestamo(pres);
 
     return "Registro exitoso";
     }
