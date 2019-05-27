@@ -174,12 +174,12 @@ public class DemoApplication {
     ArrayList<Libro> libros = single.getLibros();
     for(Libro libro:libros){
       if(libro.getISBN().equals(ISBN)){
-        respuesta="1";
+        rta="1";
 
       }else 
-      respuesta="0";
+      rta="0";
     }
-    return respuesta;
+    return rta;
 
   }
   @RequestMapping("/verificacionexistencia")
