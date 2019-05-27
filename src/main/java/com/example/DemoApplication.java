@@ -492,7 +492,8 @@ public class DemoApplication {
     }
     return resultante;
   }
-
+@RequestMapping("/rta")
+@ResponseBody
   String maximo(){
     String usuario="";
     int cantidad =0;
@@ -510,6 +511,7 @@ public class DemoApplication {
     }
     return usuario;
   }
+
 
   
 
