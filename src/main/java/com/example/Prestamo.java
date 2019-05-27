@@ -2,7 +2,7 @@ package com.example;
 
 public class Prestamo
 {
-  private int Id;
+  private String Id;
   private String ISBN;
   private String fecha;
   private int dia;
