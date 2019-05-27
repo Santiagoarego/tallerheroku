@@ -23,7 +23,7 @@ public class Prestamo
     this.dia = 0;
   }
 
-  public int getId()
+  public String getId()
   {
     return this.Id;
   }
@@ -43,7 +43,7 @@ public class Prestamo
     return this.dia;
   }
 
-  public void setId(int ID)
+  public void setId(String ID)
   {
     this.Id = ID;
   }
