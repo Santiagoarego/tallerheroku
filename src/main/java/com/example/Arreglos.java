@@ -94,7 +94,7 @@ public class Arreglos {
       return this.reservados;
     }
 
-    public void addReservados(Reservado libro)
+    public void addReservado(Reservado libro)
     {
       this.reservados.add(libro);
     }

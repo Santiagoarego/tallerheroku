@@ -110,6 +110,10 @@ public class DemoApplication {
 
     Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
 
+    Prestado pres = new Prestado(id, ISBN);
+
+    single.addPrestamo(pres);
+
     single.addPrestamo(pres);
 
     return "Registro exitoso";
@@ -131,6 +135,10 @@ public class DemoApplication {
     this.disminuyeLibro(ISBN);
 
     Reserva pres = new Reserva(id, ISBN, fechahoy, fecharetira, dia);
+
+    Reservado reser = new Reservado(id, ISBN);
+
+    single.addReservado(reser);
 
     single.addReserva(pres);
 
