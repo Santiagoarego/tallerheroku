@@ -484,7 +484,7 @@ public class DemoApplication {
       for(Usuario user : us){
         if(user instanceof Estudiante){
           Estudiante estud = (Estudiante)user;
-          if(estud.getId().equals(respuesta)){
+          if(estud.getCorreo().equals(respuesta)){
             resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n";
           }
         }
