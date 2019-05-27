@@ -226,7 +226,7 @@ public class DemoApplication {
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();
     String rta ="";
-    for(int i =0; i<libros.size(),i++){
+    for(int i =0; i<libros.size();i++){
       if(libros.get(i).getISBN().equals(ISBN)){
         libros.remove(i);
         rta="eliminado";
