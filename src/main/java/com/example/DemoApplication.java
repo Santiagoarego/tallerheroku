@@ -175,7 +175,7 @@ public class DemoApplication {
     for(Libro libro:libros){
       if(libro.getISBN().equals(ISBN)){
         rta="1";
-
+break;
       }else 
       rta="0";
     }
