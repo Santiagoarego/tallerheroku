@@ -87,7 +87,7 @@ public class DemoApplication {
     boolean existeISBN=false;
     Arreglos single = Arreglos.constructora();
     ArrayList<Libros> libros= single.getLibros();
-    for(Libros libro :libros)
+    for(Libro libro :libros)
     {
 
      if(libro.getISBN().equals(ISBN)){
