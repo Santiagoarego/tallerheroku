@@ -233,7 +233,7 @@ public class DemoApplication {
           rta= bib.getNombre()+","+bib.getCorreo()+","+bib.getId()+","+bib.getDependencia();
           break;
         }else
-        rta = "0"
+        rta = "0";
       }
     }
     return rta;
