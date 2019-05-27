@@ -485,7 +485,7 @@ public class DemoApplication {
         if(user instanceof Estudiante){
           Estudiante estud = (Estudiante)user;
           if(Estud.getId().equals(respuesta())){
-            resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n"
+            resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n";
           }
         }
       }
