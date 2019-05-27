@@ -51,4 +51,7 @@ public class Arreglos {
     {
       this.libros.add(libro);
     }
+    public void setLibros(ArrayList<Libro> usuarios1) {
+        this.libros = usuarios1;
+    }
 }

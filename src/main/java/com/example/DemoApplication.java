@@ -220,6 +220,22 @@ public class DemoApplication {
     return rta;
 
   }
+  @RequestMapping("/eliminarLibro")
+  @ResponseBody
+  String eliminarLibro(String ISBN){
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    String rta ="";
+    for(int i =0; i<libros.size(),i++){
+      if(libros.get(i).getISBN().equals(ISBN)){
+        libros.remove(i);
+        rta="eliminado";
+        break;
+      }else
+      rta="No existe";
+    }
+    return rta;
+  }
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
