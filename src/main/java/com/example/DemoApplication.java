@@ -87,8 +87,25 @@ public class DemoApplication {
   {
     boolean existeISBN=false;
     Arreglos single = Arreglos.constructora();
-    ArrayList<Prestado> libros= single.getLibros();
+    ArrayList<Prestado> libros= single.getPrestados();
     for(Prestado libro :libros)
+    {
+
+     if(libro.getId().equals(id)){
+       existeISBN=true;
+       break;
+     }
+    }
+
+    return existeISBN;
+  }
+
+  boolean existeReservado(String id)
+  {
+    boolean existeISBN=false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Reservado> libros= single.getReservados();
+    for(Reservado libro :libros)
     {
 
      if(libro.getId().equals(id)){
