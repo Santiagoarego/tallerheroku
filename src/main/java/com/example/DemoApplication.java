@@ -161,12 +161,27 @@ public class DemoApplication {
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();
     for(Libro libro : libros){
-      respuesta += "Nombre: "+libro.getNombre()+"\n ISBN: "+libro.getISBN()+"\n Autor: "+libro.getAutor()+"\n Cantidad de ejemplares "+libro.getCantidad()+"\n\n";
+      respuesta += "Nombre: "+libro.getNombre()+"\nISBN: "+libro.getISBN()+"\nAutor: "+libro.getAutor()+"\nCantidad de ejemplares "+libro.getCantidad()+"\n\n";
     }
     return respuesta;
   }
 
+  @RequestMapping("/existeLibro")
+  @ResponseBody
+  String existeLibro(String ISBN){
+    String rta="";
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    for(Libro libro:libros){
+      if(libro.getISBN().equals(ISBN)){
+        respuesta="1";
 
+      }else 
+      respuesta="0";
+    }
+    return respuesta;
+
+  }
   @RequestMapping("/verificacionexistencia")
   @ResponseBody
   boolean existeid(String id)
