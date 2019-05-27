@@ -8,7 +8,7 @@ public class Reserva
   private String fecharetira;
   private int dia;
 
-  public  Prestamo(String Id, String ISBN, String fecha1, String fecha2, int dia)
+  public  Reserva(String Id, String ISBN, String fecha1, String fecha2, int dia)
   {
     this.Id = Id;
     this.ISBN = ISBN;
@@ -17,7 +17,7 @@ public class Reserva
     this.dia = dia;
   }
 
-  public  Prestamo()
+  public  Reserva()
   {
     this.Id = "";
     this.ISBN = "";
