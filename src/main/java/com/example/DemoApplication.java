@@ -106,6 +106,8 @@ public class DemoApplication {
     ArrayList<Prestamo> libros = single.getPrestamos();
     if(this.existeISBN(ISBN)){
 
+    Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
+
     single.addPrestamo(libro);
 
     return "Registro exitoso";
@@ -233,7 +235,7 @@ public class DemoApplication {
 
   }
 
-  Libro disminuyeLibro(String ISBN){
+  void disminuyeLibro(String ISBN){
     Libro rta;
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();
@@ -242,10 +244,7 @@ public class DemoApplication {
         libro.disminuirCantidad();
         break;
       }else
-      rta="0";
     }
-    return rta;
-
   }
   @RequestMapping("/actualizarLibro")
   @ResponseBody
