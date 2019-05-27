@@ -106,6 +106,8 @@ public class DemoApplication {
     ArrayList<Prestamo> libros = single.getPrestamos();
     if(this.existeISBN(ISBN)){
 
+    this.disminuyeLibro(ISBN);
+
     Prestamo pres = new Prestamo(id, ISBN, fecha, dia);
 
     single.addPrestamo(pres);
@@ -116,6 +118,29 @@ public class DemoApplication {
     return "No existe ese libro";
 
   }
+
+
+  @RequestMapping("/crearReserva")
+  @ResponseBody
+  String crearReserva(String id, String ISBN,String fechahoy, String fecharetira, int dia)
+  {
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Reserva> libros = single.getReservas();
+    if(this.existeISBN(ISBN)){
+
+    this.disminuyeLibro(ISBN);
+
+    Reserva pres = new Reserva(id, ISBN, fechahoy, fecharetira, dia);
+
+    single.addReserva(pres);
+
+    return "Registro exitoso";
+    }
+    else
+    return "No existe ese libro";
+
+  }
+
 
   @RequestMapping("/crearLibro")
   @ResponseBody

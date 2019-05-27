@@ -15,6 +15,7 @@ public class Arreglos {
     private ArrayList<Usuario> usuarios = new ArrayList();
     private ArrayList<Libro> libros = new ArrayList();
     private ArrayList<Prestamo> prestamos = new ArrayList();
+    private ArrayList<Reserva> reservas = new ArrayList();
     public String IdSession;
     public static Arreglos constructora() {
 
@@ -71,6 +72,19 @@ public class Arreglos {
 
     public void guardaLibro(Libro libro) {
         libros.add(libro);
+    }
+
+    public ArrayList<Reserva> getReservas()
+    {
+      return this.reservas;
+    }
+
+    public void addReserva(Reserva libro)
+    {
+      this.reservas.add(libro);
+    }
+    public void setReservas(ArrayList<Reserva> reservas) {
+        this.reservas = reservas;
     }
 
 }
