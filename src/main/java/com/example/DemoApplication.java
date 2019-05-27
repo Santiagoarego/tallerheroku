@@ -175,7 +175,23 @@ public class DemoApplication {
     for(Libro libro:libros){
       if(libro.getISBN().equals(ISBN)){
         rta="1";
-break;
+        break;
+      }else 
+      rta="0";
+    }
+    return rta;
+
+  }
+  @RequestMapping("/devuelveLibro")
+  @ResponseBody
+  String devuelveLibro(String ISBN){
+    String rta="";
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libro> libros = single.getLibros();
+    for(Libro libro:libros){
+      if(libro.getISBN().equals(ISBN)){
+        rta=libro.getISBN()+","+libro.getNombre()+","+libro.getAutor()+","+libro.getCantidad()+","+libro.getKeywords()+","+libro.getDescripcion();
+        break;
       }else 
       rta="0";
     }
