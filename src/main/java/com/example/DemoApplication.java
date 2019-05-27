@@ -235,6 +235,7 @@ public class DemoApplication {
         }else
         rta = "0";
       }
+      rta="3";
     }
     return rta;
   }
