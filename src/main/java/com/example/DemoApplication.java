@@ -82,18 +82,35 @@ public class DemoApplication {
     }
     return "Registro exitoso";
   }
+  boolean existeISBN(String ISBN)
+  {
+    boolean existeISBN=false;
+    Arreglos single = Arreglos.constructora();
+    ArrayList<Libros> libros= single.getLibros();
+    for(Libros libro :libros)
+    {
 
+     if(libro.getISBN().equals(ISBN)){
+       existeISBN=true;
+       break;
+     }
+    }
+
+    return existeISBN;
+  }
   @RequestMapping("/crearLibro")
   @ResponseBody
   String crearLibro(String nombre, String autor,String keywords,String ISBN,int cantidad,String descripcion)
   {
     Arreglos single = Arreglos.constructora();
     ArrayList<Libro> libros = single.getLibros();
-
+    if(!this.existeISBN(ISBN)){
     Libro libro = new Libro(nombre, autor, keywords, ISBN, cantidad, descripcion);
     single.addLibro(libro);
-
     return "Registro exitoso";
+    }else
+    return "ISBN ya en uso";
+    
   }
 
   @RequestMapping("/ingresaUsuario")
