@@ -486,6 +486,7 @@ public class DemoApplication {
           Estudiante estud = (Estudiante)user;
           if(estud.getCorreo().equals(respuesta)){
             resultante= "Nombre: "+estud.getNombre()+"\nCorreo: "+estud.getCorreo()+"\nCarrera: "+estud.getFacultad()+"\nId"+estud.getId()+"\n\n";
+            break;
           }
         }
       }
